@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="deck_verb_en_es_demo" model="leitner.deck">
+        <field name="name">Verbs en-es</field>
+    </record>
+
+    <record id="card_drink_demo" model="leitner.card">
+        <field name="name">Beber</field>
+        <field name="front">beber</field>
+        <field name="back">drink - drank - drunk</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_verb_en_es_demo'))]"/>
+    </record>
+
+    <record id="card_say_demo" model="leitner.card">
+        <field name="name">Decir</field>
+        <field name="front">decir</field>
+        <field name="back">say - said - said</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_verb_en_es_demo'))]"/>
+    </record>
+
+    <record id="card_put_demo" model="leitner.card">
+        <field name="name">Poner</field>
+        <field name="front">poner</field>
+        <field name="back">put - put - put</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_verb_en_es_demo'))]"/>
+    </record>
+
+    <record id="card_go_demo" model="leitner.card">
+        <field name="name">Ir</field>
+        <field name="front">ir</field>
+        <field name="back">go - went - gone</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_verb_en_es_demo'))]"/>
+    </record>
+
+
+    <record id="deck_country_capital_demo" model="leitner.deck">
+        <field name="name">Country / Capital</field>
+    </record>
+
+    <record id="card_spain_demo" model="leitner.card">
+        <field name="name">Spain</field>
+        <field name="front">Spain</field>
+        <field name="back">Madrid</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_country_capital_demo'))]"/>
+    </record>
+
+    <record id="card_france_demo" model="leitner.card">
+        <field name="name">France</field>
+        <field name="front">France</field>
+        <field name="back">Paris</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_country_capital_demo'))]"/>
+    </record>
+
+    <record id="card_portugal_demo" model="leitner.card">
+        <field name="name">Portugal</field>
+        <field name="front">Portugal</field>
+        <field name="back">Lisbon</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_country_capital_demo'))]"/>
+    </record>
+
+    <record id="card_great_britain_demo" model="leitner.card">
+        <field name="name">Great Britain</field>
+        <field name="front">Great Britain</field>
+        <field name="back">London</field>
+        <field name="deck_ids" eval="[Command.link(ref('deck_country_capital_demo'))]"/>
+    </record>
+
+
+    <record id="box_set_countries_demo" model="leitner.box_set">
+        <field name="name">Countries</field>
+        <field name="deck_id" ref="deck_country_capital_demo"/>
+    </record>
+
+    <function
+        model="leitner.deck"
+        name="action_new_box"
+        eval="([ref('leitner.deck_country_capital_demo')])"/>
+    <function model="leitner.box_set" name="write">
+        <value model="leitner.box_set" eval="obj().search([]).ids"/>
+        <value eval="{'user_id': ref('base.user_demo')}"/>
+    </function>
+
+    <record id="group_leitner_user" model="res.groups">
+        <field name="users" eval="[(4, ref('base.user_demo'))]"/>
+    </record>
+
+</odoo>

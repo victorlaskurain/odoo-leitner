@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="leitner_deck_action">
+        <field name="name">Decks</field>
+        <field name="res_model">leitner.deck</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="leitner_box_set_action">
+        <field name="name">Boxes</field>
+        <field name="res_model">leitner.box_set</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <menuitem
+        id="leitner_menu_root"
+        name="Leitner Method"
+        groups="group_leitner_user"
+        sequence="100"
+        />
+
+    <menuitem
+        id="leitner_box_set_menu"
+        name="Boxes"
+        parent="leitner_menu_root"
+        action="leitner_box_set_action"/>
+
+    <menuitem
+        id="leitner_deck_menu"
+        name="Decks"
+        parent="leitner_menu_root"
+        action="leitner_deck_action"/>
+
+</odoo>

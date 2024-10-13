@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+
+readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+
+readonly REPO_DIR=$(realpath "$SCRIPT_DIR/..")
+readonly FORMAT_DIR=$(realpath "${1:-$PWD}")
+readonly FORMAT_DIR_IN_CONTAINER=${FORMAT_DIR/"$REPO_DIR"//opt/src}
+
+echo Run $(basename "$0") in container on path $FORMAT_DIR_IN_CONTAINER
+(
+    cd "$SCRIPT_DIR"
+    sudo docker-compose run -u$(id -u):$(id -g) --rm util black-and-pretty $FORMAT_DIR_IN_CONTAINER
+)

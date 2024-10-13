@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+#
+# You are expected to run this command from the util service defined
+# in the docker-compose.yml file.
+#
+
+readonly FILE_TO_RESTORE=${1:-$(ls /backups | tail -n 1)}
+cd /
+shopt -s dotglob
+rm -rf /var/lib/odoo/* /var/lib/postgresql/data/*
+tar zxf /backups/$FILE_TO_RESTORE

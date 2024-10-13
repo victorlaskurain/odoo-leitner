@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="leitner_deck_view_form" model="ir.ui.view">
+        <field name="name">leitner_deck_view_form</field>
+        <field name="model">leitner.deck</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            type="object"
+                            name="action_show_cards"
+                            class="oe_stat_button"
+                            icon="fa-address-card">
+                            <div class="o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="number_of_cards"/> cards
+                                </span>
+                                <span class="o_stat_text">
+                                    Cards
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                </sheet>
+                <chatter reload_on_follower="True"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="leitner_deck_view_kanban" model="ir.ui.view">
+        <field name="name">leitner_deck_view_kanban</field>
+        <field name="model">leitner.deck</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="oe_background_grey o_kanban_dashboard"
+                sample="1"
+                action="action_show_cards"
+                type="object">
+                <templates>
+                    <t t-name="menu">
+                        <a name="action_edit_form" type="object" role="menuitem" class="dropdown-item">Edit</a>
+                        <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                    </t>
+                    <t t-name="card">
+                        <div class="o_kanban_record_body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong><field name="name"/></strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <field name="number_of_cards"/>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom mt-3">
+                                <button string="New Box"
+                                        class="btn-primary"
+                                        name="action_new_box"
+                                        type="object"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="leitner_deck_view_list" model="ir.ui.view">
+        <field name="name">leitner_deck_view_list</field>
+        <field name="model">leitner.deck</field>
+        <field name="arch" type="xml">
+            <list string="Task Stage" delete="1" sample="1" multi_edit="1">
+                <field name="name"/>
+                <field name="number_of_cards"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>

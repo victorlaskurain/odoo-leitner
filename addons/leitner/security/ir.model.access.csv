@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_leitner_user_leitner_card,Leitner Card by Leitner User,model_leitner_card,leitner.group_leitner_user,1,1,1,1
+access_leitner_user_leitner_deck,Leitner Deck by Leitner User,model_leitner_deck,leitner.group_leitner_user,1,1,1,1
+access_leitner_user_leitner_box_set,Leitner Box Set by Leitner User,model_leitner_box_set,leitner.group_leitner_user,1,1,1,1
+access_leitner_user_leitner_boxed_card,Leitner Boxed Card by Leitner User,model_leitner_boxed_card,leitner.group_leitner_user,1,1,1,1

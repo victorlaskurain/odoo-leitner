@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+#
+# You are expected to run this command from the util service defined
+# in the docker-compose.yml file.
+#
+
+readonly NOW=$(date +%Y%m%d%H%M%S)
+tar czPf /backups/backup-$NOW.tar.gz /var/lib/odoo /var/lib/postgresql/data

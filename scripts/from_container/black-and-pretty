@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+
+#
+# You are expected to run this command from the util service defined
+# in the docker-compose.yml file.
+#
+
+readonly RUN_ON_DIR=${1:?Missing parameter DIRECTORY}
+cd $RUN_ON_DIR
+echo Prettify $1
+prettier --write "**/static/src/**/*.js" || true
+echo Blacken $1
+black . || true
