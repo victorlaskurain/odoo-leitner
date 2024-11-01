@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 from odoo.fields import Command
 
+
 class Deck(models.Model):
     _name = "leitner.deck"
     _inherit = ["mail.thread"]

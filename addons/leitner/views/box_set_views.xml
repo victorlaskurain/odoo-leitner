@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <strong>
-                                        <field name="number_of_cards"/>
+                                        <span><field name="number_of_cards_by_box"/></span>
                                     </strong>
                                 </div>
                             </div>
@@ -102,6 +102,20 @@
                             name="action_leave"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            class="oe_stat_button">
+                            <div class="o_stat_info w-100 text-center">
+                                <span class="o_stat_value">
+                                    <field name="number_of_cards_by_box"/>
+                                </span>
+                            </div>
+                        </button>
+
+                    </div>
+                    <div class="text-center d-sm-none"> <!-- show only in mobile vertical -->
+                        <field name="number_of_cards_by_box"/>
+                    </div>
                     <group>
                         <field name="front"
                                readonly="1"

@@ -2,6 +2,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 from odoo.fields import Command
 
+import json
 
 
 class BoxSet(models.Model):
@@ -18,6 +19,7 @@ class BoxSet(models.Model):
     boxed_card_ids = fields.One2many("leitner.boxed_card", "box_set_id")
     number_of_boxes = fields.Integer(required=True, default=4)
     number_of_cards = fields.Integer(compute="_compute_number_of_cards")
+    number_of_cards_by_box = fields.Char(compute="_compute_number_of_cards_by_box")
     is_answer_back = fields.Boolean(required=True, default=True)
 
     @api.model_create_multi
@@ -38,6 +40,17 @@ class BoxSet(models.Model):
     def _compute_number_of_cards(self):
         for box_set in self:
             box_set.number_of_cards = len(box_set.boxed_card_ids)
+
+    def _compute_number_of_cards_by_box(self):
+        BoxedCard = self.env["leitner.boxed_card"]
+        for box_set in self:
+            card_counts = [
+                BoxedCard.search_count(
+                    [("box_set_id", "=", box_set.id), ("box_number", "=", box_number)]
+                )
+                for box_number in range(1, box_set.number_of_boxes + 1)
+            ]
+            box_set.number_of_cards_by_box = str(card_counts)
 
     def action_start_session(self):
         def get_next_card():
@@ -77,6 +90,10 @@ class BoxedCard(models.Model):
     user_id = fields.Many2one(related="box_set_id.user_id")
     name = fields.Char(related="card_id.name")
     box_set_id = fields.Many2one("leitner.box_set", required=True, ondelete="cascade")
+    number_of_cards_by_box_old = fields.Char(
+        related="box_set_id.number_of_cards_by_box"
+    )
+    number_of_cards_by_box = fields.Html(compute="_compute_number_of_cards_by_box")
     box_number = fields.Integer(default=1, required=True)
     card_id = fields.Many2one("leitner.card", check_company=True)
     front = fields.Html(related="card_id.front")
@@ -84,6 +101,23 @@ class BoxedCard(models.Model):
     sequence = fields.Integer(default=1, required=True)
     is_answer_back = fields.Boolean(related="box_set_id.is_answer_back", readonly=True)
     is_answer_visible = fields.Boolean(default=False, required=True)
+
+    def _compute_number_of_cards_by_box(self):
+        for card in self:
+            # :WARNING: hackish, parses string as JSON and turns into HTML
+            counts = json.loads(card.box_set_id.number_of_cards_by_box)
+            card.number_of_cards_by_box = '<span class="fw-normal">[%s]</span>' % (
+                ", ".join(
+                    [
+                        (
+                            '<span class="fw-bolder">%d</span>' % c
+                            if card.box_number == i + 1
+                            else str(c)
+                        )
+                        for i, c in enumerate(counts)
+                    ]
+                )
+            )
 
     @api.constrains("box_number")
     def _check_box_number(self):
