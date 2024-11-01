@@ -30,9 +30,9 @@ class Card(models.Model):
     @api.depends("front")
     def _compute_front_txt(self):
         for c in self:
-            c.front_txt = BeautifulSoup(c.front, features="lxml").get_text("\n")
+            c.front_txt = BeautifulSoup(c.front or "", features="lxml").get_text("\n")
 
     @api.depends("back")
     def _compute_back_txt(self):
         for c in self:
-            c.back_txt = BeautifulSoup(c.back, features="lxml").get_text("\n")
+            c.back_txt = BeautifulSoup(c.back or "", features="lxml").get_text("\n")
