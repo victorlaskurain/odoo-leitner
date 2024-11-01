@@ -114,6 +114,22 @@
                                columns="2"
                                invisible="is_answer_back and not is_answer_visible"/>
                     </group>
+                    <div class="d-flex gap-1 d-sm-none"> <!-- show only in mobile vertical -->
+                        <button string="Flip"
+                                type="object"
+                                name="action_flip"/>
+                        <button string="Right!"
+                                type="object"
+                                name="action_hit"
+                                invisible="not is_answer_visible"/>
+                        <button string="Wrong!"
+                                type="object"
+                                name="action_miss"
+                                invisible="not is_answer_visible"/>
+                        <button string="Leave"
+                                type="object"
+                                name="action_leave"/>
+                    </div>
                 </sheet>
             </form>
         </field>
