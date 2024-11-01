@@ -1,0 +1,402 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* leitner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20241007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 07:50+0000\n"
+"PO-Revision-Date: 2024-11-01 09:05+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_form
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                                    Cards\n"
+"                                </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+"                                    Tarjetas\n"
+"                                </span>"
+
+#. module: leitner
+#: model:ir.model,name:leitner.model_leitner_card
+msgid "A Leitner System card"
+msgstr "Una tarjeta del sistema Leitner"
+
+#. module: leitner
+#: model:ir.model,name:leitner.model_leitner_deck
+msgid "A Leitner System deck"
+msgstr "Un mazo del sistema Leitner"
+
+#. module: leitner
+#: model:ir.model,name:leitner.model_leitner_boxed_card
+msgid "A card as part of the box set."
+msgstr "Una tarjeta que es parte de una caja."
+
+#. module: leitner
+#: model:ir.model,name:leitner.model_leitner_box_set
+msgid "A deck spread into a set of boxes ready for use"
+msgstr "Un mazo preparado para su uso en un conjunto de cajas."
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_needaction
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_needaction
+msgid "Action Needed"
+msgstr "Se requiere una acción"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_attachment_count
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de adjuntos"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__back
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__back
+msgid "Back"
+msgstr "Reverso"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__back_txt
+msgid "Back Txt"
+msgstr "Texto del reverso"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__box_number
+msgid "Box Number"
+msgstr "Número de caja"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__box_set_id
+msgid "Box Set"
+msgstr "Set de cajas"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__boxed_card_ids
+msgid "Boxed Card"
+msgstr "Tarjeta encajada"
+
+#. module: leitner
+#: model:ir.actions.act_window,name:leitner.leitner_box_set_action
+#: model:ir.ui.menu,name:leitner.leitner_box_set_menu
+msgid "Boxes"
+msgstr "Cajas"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__card_id
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__card_ids
+msgid "Card"
+msgstr "Tarjeta"
+
+#. module: leitner
+#. odoo-python
+#: code:addons/leitner/models/deck.py:0
+msgid "Cards of %s"
+msgstr "Tarjetas de %s"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__company_id
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__company_id
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__company_id
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: leitner
+#. odoo-python
+#: code:addons/leitner/models/box_set.py:0
+msgid "Congratulations! There are no more cards, you are done!"
+msgstr "¡Felicidades! ¡No hay más tarjetas, has terminado!"
+
+#. module: leitner
+#: model:leitner.deck,name:leitner.deck_country_capital_demo
+msgid "Country / Capital"
+msgstr "País / Capital"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__create_uid
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__create_uid
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__create_uid
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__create_date
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__create_date
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__create_date
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__deck_id
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__deck_ids
+msgid "Deck"
+msgstr "Mazo"
+
+#. module: leitner
+#: model:ir.actions.act_window,name:leitner.leitner_deck_action
+#: model:ir.ui.menu,name:leitner.leitner_deck_menu
+msgid "Decks"
+msgstr "Mazos"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_kanban
+msgid "Delete"
+msgstr "Eliminar"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__display_name
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__display_name
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__display_name
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__display_name
+msgid "Display Name"
+msgstr "Nombre visualizado"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_boxed_card_session
+msgid "Flip"
+msgstr "Voltear"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_follower_ids
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_partner_ids
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (contactos)"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__front
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__front
+msgid "Front"
+msgstr "Cara"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__front_txt
+msgid "Front Txt"
+msgstr "Texto de la cara"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__has_message
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__id
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__id
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__id
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__id
+msgid "ID"
+msgstr "ID"
+
+#. module: leitner
+#: model:ir.model.fields,help:leitner.field_leitner_card__message_needaction
+#: model:ir.model.fields,help:leitner.field_leitner_deck__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está selecciona, hay mensajes nuevos que requieren su atención."
+
+#. module: leitner
+#: model:ir.model.fields,help:leitner.field_leitner_card__message_has_error
+#: model:ir.model.fields,help:leitner.field_leitner_deck__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está seleccionado, algunos mensajes tiene errores de entrega."
+
+#. module: leitner
+#. odoo-python
+#: code:addons/leitner/models/box_set.py:0
+msgid "Invalid box number %d "
+msgstr "Número de caja inválido %d "
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__is_answer_back
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__is_answer_back
+msgid "Is Answer Back"
+msgstr "La respuesta está en el reverso"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__is_answer_visible
+msgid "Is Answer Visible"
+msgstr "La respuesta es visible"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_is_follower
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__write_uid
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__write_uid
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__write_uid
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__write_uid
+msgid "Last Updated by"
+msgstr "La última actualización por "
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__write_date
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__write_date
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__write_date
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__write_date
+msgid "Last Updated on"
+msgstr "La última actualización en"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_boxed_card_session
+msgid "Leave"
+msgstr "Abandonar"
+
+#. module: leitner
+#: model:res.groups,name:leitner.group_leitner_admin
+msgid "Leitner Admin"
+msgstr "Administrador Leitner"
+
+#. module: leitner
+#: model:ir.ui.menu,name:leitner.leitner_menu_root
+msgid "Leitner Method"
+msgstr "Método Leitner"
+
+#. module: leitner
+#: model:ir.module.category,name:leitner.module_category_leitner
+msgid "Leitner Rights"
+msgstr "Permisos Leitner"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_has_error
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_ids
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__name
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__name
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__name
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_kanban
+msgid "New Box"
+msgstr "Nueva caja"
+
+#. module: leitner
+#. odoo-python
+#: code:addons/leitner/models/box_set.py:0
+msgid "Nothing to do here. You should reset the box or pick another one"
+msgstr "Nada que hacer. Deberías reiniciar la caja o empezar con otra"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__number_of_boxes
+msgid "Number Of Boxes"
+msgstr "Número de cajas"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__number_of_cards
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__number_of_cards
+msgid "Number Of Cards"
+msgstr "Número de tarjetas"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__number_of_cards_by_box
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__number_of_cards_by_box
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__number_of_cards_by_box_old
+msgid "Number Of Cards By Box"
+msgstr "Número de tarjetas por caja"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_needaction_counter
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_card__message_has_error_counter
+#: model:ir.model.fields,field_description:leitner.field_leitner_deck__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: leitner
+#: model:ir.model.fields,help:leitner.field_leitner_card__message_needaction_counter
+#: model:ir.model.fields,help:leitner.field_leitner_deck__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren atención"
+
+#. module: leitner
+#: model:ir.model.fields,help:leitner.field_leitner_card__message_has_error_counter
+#: model:ir.model.fields,help:leitner.field_leitner_deck__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensaje con errores de entrega"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__user_id
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__user_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_boxed_card_session
+msgid "Right!"
+msgstr "¡Correcto!"
+
+#. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_box_set_view_kanban
+msgid "Start Session"
+msgstr "Comenzar sesión"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_box_set_view_list
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_card_view_list
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_list
+msgid "Task Stage"
+msgstr "Estado de tarea"
+
+#. module: leitner
+#: model:res.groups,name:leitner.group_leitner_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: leitner
+#: model:leitner.deck,name:leitner.deck_verb_en_es_demo
+msgid "Verbs en-es"
+msgstr "Verbos en-es"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_boxed_card_session
+msgid "Wrong!"
+msgstr "¡Incorrecto!"
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_form
+msgid "cards"
+msgstr "tarjetas"
