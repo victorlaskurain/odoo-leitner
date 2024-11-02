@@ -103,6 +103,18 @@ class BoxSet(models.Model):
         self.mapped("boxed_card_ids").write({"box_number": 1})
         return False
 
+    def action_show_boxed_cards(self):
+        return {
+            "name": self.name,
+            "res_model": "leitner.boxed_card",
+            "view_mode": "kanban",
+            "views": [
+                (self.env.ref("leitner.leitner_boxed_card_view_kanban").id, "kanban")
+            ],
+            "type": "ir.actions.act_window",
+            "domain": [("box_set_id", "=", self.id)],
+        }
+
 
 class BoxedCard(models.Model):
     _name = "leitner.boxed_card"
@@ -117,13 +129,22 @@ class BoxedCard(models.Model):
         related="box_set_id.number_of_cards_by_box"
     )
     number_of_cards_by_box = fields.Html(compute="_compute_number_of_cards_by_box")
-    box_number = fields.Integer(default=1, required=True)
+    box_number = fields.Integer(
+        default=1, required=True, group_expand="_read_group_box_number"
+    )
     card_id = fields.Many2one("leitner.card", check_company=True)
     front = fields.Html(related="card_id.front")
     back = fields.Html(related="card_id.back")
     sequence = fields.Integer(default=1, required=True)
     is_answer_back = fields.Boolean(related="box_set_id.is_answer_back", readonly=True)
     is_answer_visible = fields.Boolean(default=False, required=True)
+
+    @api.model
+    def _read_group_box_number(self, numbers, domain):
+        greatest_box_number = max(
+            self.search(domain).mapped("box_set_id").mapped("number_of_boxes")
+        )
+        return list(range(1, 1 + greatest_box_number))
 
     def _compute_number_of_cards_by_box(self):
         for card in self:
