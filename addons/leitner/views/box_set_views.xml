@@ -55,7 +55,7 @@
                         <h1><field name="name"/></h1>
                     </div>
                     <group>
-                        <field name="deck_id"/>
+                        <field name="deck_ids" widget="many2many_tags"/>
                         <field name="number_of_boxes"/>
                         <field name="number_of_cards"/>
                         <field name="user_id" groups="leitner.group_leitner_admin"/>
@@ -72,7 +72,7 @@
             <list string="Task Stage" delete="1" sample="1" multi_edit="1">
                 <field name="name"/>
                 <field name="user_id" groups="leitner.group_leitner_admin"/>
-                <field name="deck_id"/>
+                <field name="deck_ids" widget="many2many_tags"/>
                 <field name="number_of_cards"/>
             </list>
         </field>

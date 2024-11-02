@@ -15,7 +15,9 @@ class BoxSet(models.Model):
         "res.company", required=True, default=lambda self: self.env.company
     )
     user_id = fields.Many2one("res.users", "Owner", default=lambda self: self.env.user)
-    deck_id = fields.Many2one("leitner.deck", required=True, check_company=True)
+    deck_ids = fields.Many2many(
+        "leitner.deck", string="Decks", required=True, check_company=True
+    )
     boxed_card_ids = fields.One2many("leitner.boxed_card", "box_set_id")
     number_of_boxes = fields.Integer(required=True, default=4)
     number_of_cards = fields.Integer(compute="_compute_number_of_cards")
@@ -32,7 +34,7 @@ class BoxSet(models.Model):
         for box_set in self:
             boxed_cards = [
                 Command.create({"card_id": c.id, "sequence": i})
-                for i, c in enumerate(box_set.deck_id.card_ids, 1)
+                for i, c in enumerate(box_set.deck_ids.mapped("card_ids"), 1)
             ]
             box_set.boxed_card_ids = boxed_cards
 
