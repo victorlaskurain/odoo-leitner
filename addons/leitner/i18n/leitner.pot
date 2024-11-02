@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20241007\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-02 07:45+0000\n"
-"PO-Revision-Date: 2024-11-02 07:45+0000\n"
+"POT-Creation-Date: 2024-11-02 08:22+0000\n"
+"PO-Revision-Date: 2024-11-02 08:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -244,6 +244,11 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: leitner
+#: model:ir.model.fields,field_description:leitner.field_leitner_box_set__is_initial_state
+msgid "Is Initial State"
+msgstr ""
+
+#. module: leitner
 #: model:ir.model.fields,field_description:leitner.field_leitner_box_set__write_uid
 #: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__write_uid
 #: model:ir.model.fields,field_description:leitner.field_leitner_card__write_uid
@@ -356,6 +361,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:leitner.field_leitner_box_set__user_id
 #: model:ir.model.fields,field_description:leitner.field_leitner_boxed_card__user_id
 msgid "Owner"
+msgstr ""
+
+#. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_box_set_view_kanban
+msgid "Restart"
 msgstr ""
 
 #. module: leitner

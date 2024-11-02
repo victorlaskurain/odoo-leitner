@@ -23,6 +23,7 @@ class BoxSet(models.Model):
     number_of_cards = fields.Integer(compute="_compute_number_of_cards")
     number_of_cards_by_box = fields.Char(compute="_compute_number_of_cards_by_box")
     is_answer_back = fields.Boolean(required=True, default=True)
+    is_initial_state = fields.Boolean(compute="_compute_is_initial_state")
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -53,6 +54,12 @@ class BoxSet(models.Model):
                 for box_number in range(1, box_set.number_of_boxes + 1)
             ]
             box_set.number_of_cards_by_box = str(card_counts)
+
+    def _compute_is_initial_state(self):
+        for box_set in self:
+            box_set.is_initial_state = 1 == max(
+                box_set.boxed_card_ids.mapped("box_number")
+            )
 
     def action_edit_form(self):
         return {
@@ -91,6 +98,10 @@ class BoxSet(models.Model):
             "type": "ir.actions.act_window",
             "res_id": next_card.id,
         }
+
+    def action_restart_session(self):
+        self.mapped("boxed_card_ids").write({"box_number": 1})
+        return False
 
 
 class BoxedCard(models.Model):

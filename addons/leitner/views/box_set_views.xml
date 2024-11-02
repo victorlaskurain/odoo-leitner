@@ -8,6 +8,7 @@
             <kanban
                 class="oe_background_grey o_kanban_dashboard"
                 sample="1">
+                <field name="is_initial_state"/>
                 <templates>
                     <t t-name="menu">
                         <a name="action_edit_form" type="object" role="menuitem" class="dropdown-item">Edit</a>
@@ -30,10 +31,15 @@
                                 </div>
                             </div>
                             <div class="o_kanban_record_bottom mt-3">
-                                <div class="oe_kanban_bottom_left">
+                                <div class="oe_kanban_bottom_left d-flex gap-1">
                                     <button string="Start Session"
                                             class="btn-primary"
                                             name="action_start_session"
+                                            type="object"/>
+                                    <button t-if="!record.is_initial_state.raw_value"
+                                            string="Restart"
+                                            class="btn-primary"
+                                            name="action_restart_session"
                                             type="object"/>
                                 </div>
                                 <field name="user_id"
