@@ -54,6 +54,16 @@ class BoxSet(models.Model):
             ]
             box_set.number_of_cards_by_box = str(card_counts)
 
+    def action_edit_form(self):
+        return {
+            "name": self.name,
+            "res_model": "leitner.box_set",
+            "res_id": self.id,
+            "views": [(self.env.ref("leitner.leitner_box_set_view_form").id, "form")],
+            "view_mode": "form",
+            "type": "ir.actions.act_window",
+        }
+
     def action_start_session(self):
         def get_next_card():
             return self.env["leitner.boxed_card"].search(

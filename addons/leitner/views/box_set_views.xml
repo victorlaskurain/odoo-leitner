@@ -9,7 +9,11 @@
                 class="oe_background_grey o_kanban_dashboard"
                 sample="1">
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="menu">
+                        <a name="action_edit_form" type="object" role="menuitem" class="dropdown-item">Edit</a>
+                        <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                    </t>
+                    <t t-name="card">
                         <div class="oe_kanban_global_click">
                             <div class="row">
                                 <div class="col-12">

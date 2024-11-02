@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20241007\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-02 07:37+0000\n"
-"PO-Revision-Date: 2024-11-02 07:37+0000\n"
+"POT-Creation-Date: 2024-11-02 07:45+0000\n"
+"PO-Revision-Date: 2024-11-02 07:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -147,6 +147,7 @@ msgid "Decks"
 msgstr ""
 
 #. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_box_set_view_kanban
 #: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_kanban
 msgid "Delete"
 msgstr ""
@@ -160,6 +161,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: leitner
+#: model_terms:ir.ui.view,arch_db:leitner.leitner_box_set_view_kanban
 #: model_terms:ir.ui.view,arch_db:leitner.leitner_deck_view_kanban
 msgid "Edit"
 msgstr ""
